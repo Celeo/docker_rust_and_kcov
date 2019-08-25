@@ -1,18 +1,20 @@
+# start with Rust stable latest
 FROM rust:latest
+
+# labels
+LABEL maintainer="github.com/Celeo"
 
 # dependencies
 RUN apt-get update && \
     apt-get install -y \
-        binutils-dev \
-        build-essential \
-        cmake \
-        git \
         libcurl4-openssl-dev \
+        libelf-dev \
         libdw-dev \
-        libiberty-dev \
-        ninja-build \
-        python3 \
-        zlib1g-dev
+        cmake \
+        gcc \
+        binutils-dev \
+        libiberty-dev
+
 # download, compile, install, and clean up
 RUN mkdir /src &&\
     cd /src &&\
