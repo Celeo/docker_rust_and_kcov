@@ -29,3 +29,5 @@ RUN mkdir /src &&\
     cd / &&\
     rm -rf src &&\
     rm -rf /var/lib/apt/lists/*
+
+WORKDIR /volume
